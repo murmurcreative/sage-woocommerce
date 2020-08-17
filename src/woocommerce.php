@@ -38,6 +38,7 @@ if (defined('WC_ABSPATH')) {
             }, []);
 
             echo view($view, $data)->render();
+            return ''; // Otherwise this will show the blade /and/ the og template
         }
 
         return $template;
@@ -81,3 +82,4 @@ if (defined('WC_ABSPATH')) {
         return $theme_template ? view('SageWoocommerce::empty')->getPath() : $template;
     }, 100, 3);
 }
+
